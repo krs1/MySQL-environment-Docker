@@ -15,4 +15,6 @@ LTSのバージョンを使用する
 
 docker-compose up -d
 docker exec -it mysql_db bash
-mysql -h localhost -u root -P 3306
+
+下記コマンドでMySQLにログイン
+mysql -h localhost  -P 3306 -u root -p
