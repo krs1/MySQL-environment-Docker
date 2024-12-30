@@ -18,3 +18,22 @@ docker exec -it mysql_db bash
 
 下記コマンドでMySQLにログイン
 mysql -h localhost  -P 3306 -u root -p
+
+直接入る場合
+docker exec -it mysql_db mysql -uroot -proot
+
+
+データリセット
+docker-compose down
+rm -rf ./docker/db/data/
+
+テーブル作り直し用コマンド
+docker exec -i mysql_db mysql -uroot -proot < ./docker/init-sql/init.sql
+
+
+docker restart
+docker restart mysql_db
+
+デバッグ用
+SHOW VARIABLES LIKE 'character_set%';
+SHOW VARIABLES LIKE 'collation%';
