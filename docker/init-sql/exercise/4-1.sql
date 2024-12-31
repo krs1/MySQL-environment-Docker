@@ -5,12 +5,13 @@ CREATE TABLE IF NOT EXISTS 注文履歴 (
     日付 DATE NOT NULL,
     注文番号 VARCHAR(10) NOT NULL,
     注文枝番 INTEGER NOT NULL,
-    商品番号 VARCHAR(40) NOT NULL,
+    商品名 VARCHAR(40) NOT NULL,
     分類 CHAR(1) NOT NULL,
     サイズ CHAR(1) NOT NULL,
     単価 INTEGER NOT NULL,
     数量 INTEGER NOT NULL,
-    注文金額 INTEGER NOT NULL
+    注文金額 INTEGER NOT NULL,
+    PRIMARY KEY (注文番号, 注文枝番)
 );
 
 -- 初期化（テーブルのデータを削除）
@@ -21,7 +22,7 @@ TRUNCATE TABLE 注文履歴;
 SET FOREIGN_KEY_CHECKS = 1; -- 外部キー制約を再有効化
 
 -- データ挿入: 注文履歴
-INSERT INTO 注文履歴 (日付, 注文番号, 注文枝番, 商品番号, 分類, サイズ, 単価, 数量, 注文金額) VALUES
+INSERT INTO 注文履歴 (日付, 注文番号, 注文枝番, 商品名, 分類, サイズ, 単価, 数量, 注文金額) VALUES
 ('2024-01-01', '101', 1, 'ブレンドコーヒー', '1', 'S', 210, 1, 210),
 ('2024-01-01', '101', 2, 'サンドイッチA', '2', 'X', 360, 1, 360),
 ('2024-01-05', '105', 1, 'カフェラテ', '1', 'M', 380, 2, 760),
