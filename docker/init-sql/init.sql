@@ -490,7 +490,7 @@ CREATE TABLE IF NOT EXISTS 廃止口座 (
 -- テーブル: 取引事由
 CREATE TABLE IF NOT EXISTS 取引事由 (
     取引事由ID INTEGER PRIMARY KEY,
-    取引事由 VARCHAR(20) NOT NULL
+    取引事由名 VARCHAR(20) NOT NULL
 );
 -- テーブル: 取引
 CREATE TABLE IF NOT EXISTS 取引 (
@@ -619,7 +619,7 @@ INSERT INTO 廃止口座 (口座番号, 名義, 種別, 解約時残高, 解約�
 ('1017100', 'ソネ　タツヤ', '1', 0, '2022-11-08');
 
 -- INSERT INTO 取引事由
-INSERT INTO 取引事由 (取引事由ID, 取引事由) VALUES
+INSERT INTO 取引事由 (取引事由ID, 取引事由名) VALUES
 (1, '預入'),
 (2, '引出'),
 (3, '振込'),

@@ -34,6 +34,9 @@ rm -rf ./docker/db/data/
 
 docker exec -i mysql_db mysql -uroot -proot < ./docker/init-sql/init.sql
 
+import.shでのリセットも可能
+
+# docker restart
 
 docker restart
 
