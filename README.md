@@ -11,29 +11,36 @@ LTSのバージョンを使用する
 バージョンを変更したい場合はdocker-composeファイルを編集する
 
 # Usage
-下記コマンドで起動し、ターミナルへ入る
+
+## 下記コマンドで起動し、ターミナルへ入る
 
 docker-compose up -d
+
 docker exec -it mysql_db bash
 
-下記コマンドでMySQLにログイン
+## 下記コマンドでMySQLにログイン
 mysql -h localhost  -P 3306 -u root -p
 
-直接入る場合
+## 直接入る場合
 docker exec -it mysql_db mysql -uroot -proot
 
 
-データリセット
+## データリセット
 docker-compose down
+
 rm -rf ./docker/db/data/
 
-テーブル作り直し用コマンド
+## テーブル作り直し用コマンド
+
 docker exec -i mysql_db mysql -uroot -proot < ./docker/init-sql/init.sql
 
 
 docker restart
+
 docker restart mysql_db
 
-デバッグ用
+## デバッグ用
+
 SHOW VARIABLES LIKE 'character_set%';
+
 SHOW VARIABLES LIKE 'collation%';

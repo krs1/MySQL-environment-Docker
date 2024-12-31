@@ -2,19 +2,21 @@ USE exercise;
 
 -- テーブル: 学部
 CREATE TABLE IF NOT EXISTS 学部 (
-    ID CHAR(2) PRIMARY KEY,
-    名前 VARCHAR(20) NOT NULL,
-    備考 VARCHAR(100)
+  ID CHAR(1) PRIMARY KEY,
+  名前 VARCHAR(20) UNIQUE NOT NULL,
+  備考 VARCHAR(100) DEFAULT '特になし' NOT NULL
 );
 
 -- テーブル: 学生
 CREATE TABLE IF NOT EXISTS 学生 (
-    学籍番号 CHAR(8) PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    生年月日 DATE,
-    血液型 CHAR(2),
-    学部ID CHAR(1),
-    FOREIGN KEY (学部ID) REFERENCES 学部(ID)
+  学籍番号 CHAR(8) PRIMARY KEY,
+  名前 VARCHAR(30) NOT NULL,
+  生年月日 DATE NOT NULL,
+  血液型 CHAR(2)      CHECK (
+    血液型 IN ('A', 'B', 'O', 'AB') OR
+    血液型 IS NULL
+  ),
+  学部ID CHAR(1) REFERENCES 学部(ID)
 );
 
 -- 初期化（テーブルのデータを削除）

@@ -10,8 +10,7 @@ CREATE TABLE IF NOT EXISTS 注文履歴 (
     サイズ CHAR(1) NOT NULL,
     単価 INTEGER NOT NULL,
     数量 INTEGER NOT NULL,
-    注文金額 INTEGER NOT NULL,
-    PRIMARY KEY (注文番号, 注文枝番)
+    注文金額 INTEGER NOT NULL
 );
 
 -- 初期化（テーブルのデータを削除）

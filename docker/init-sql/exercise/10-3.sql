@@ -2,10 +2,11 @@ USE exercise;
 
 -- テーブル: 学部
 CREATE TABLE IF NOT EXISTS 学部 (
-    ID CHAR(2) PRIMARY KEY,
-    名前 VARCHAR(20) NOT NULL,
-    備考 VARCHAR(100)
+  ID CHAR(1) PRIMARY KEY,
+  名前 VARCHAR(20) UNIQUE NOT NULL,
+  備考 VARCHAR(100) DEFAULT '特になし' NOT NULL
 );
+
 
 
 -- 初期化（テーブルのデータを削除）
