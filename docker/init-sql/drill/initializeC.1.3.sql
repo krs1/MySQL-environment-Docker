@@ -4,7 +4,7 @@ USE drill;
 SET FOREIGN_KEY_CHECKS = 0; -- 外部キー制約を一時無効化
 
 TRUNCATE TABLE パーティー;
-TRUNCATE TABLE イベントテーブル;
+TRUNCATE TABLE イベント;
 TRUNCATE TABLE 経験イベント;
 TRUNCATE TABLE コード;
 
@@ -16,8 +16,8 @@ INSERT INTO パーティー (ID, 名称, 職業コード, HP, MP, 状態コー�
 ('C01', 'ミナト', '01', 89, 35, '00'),
 ('C02', 'アサカ', '11', 74, 66, '00');
 
--- INSERT INTO イベントテーブル
-INSERT INTO イベントテーブル (イベント番号, イベント名称, タイプ, 前提イベント番号, 後続イベント番号) VALUES
+-- INSERT INTO イベント
+INSERT INTO イベント (イベント番号, イベント名称, タイプ, 前提イベント番号, 後続イベント番号) VALUES
 (1, 'オープニング', '1', NULL, 3),
 (2, 'オープニング（2週目以降）', '3', NULL, 3),
 (3, '勇者の旅立ち', '1', NULL, 4),
