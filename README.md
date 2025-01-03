@@ -47,3 +47,11 @@ docker restart mysql_db
 SHOW VARIABLES LIKE 'character_set%';
 
 SHOW VARIABLES LIKE 'collation%';
+
+# ER図
+draw.io download
+https://tgg.jugani-japan.com/tsujike/2021/02/er4/
+
+
+ER図書き方
+https://tgg.jugani-japan.com/tsujike/2021/02/er4/
