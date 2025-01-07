@@ -42,9 +42,10 @@ echo "以下の候補から選択してください:"
 echo "1) init"
 echo "2) drill"
 echo "3) exercise"
+echo "4) kadai"
 
 # ユーザー入力を取得
-read -p "選択肢を入力してください (1-3): " choice
+read -p "選択肢を入力してください (1-4): " choice
 
 case $choice in
   1)
@@ -58,6 +59,10 @@ case $choice in
   3)
     echo "exercise を選択しました。"
     select_file_from_dir "./docker/init-sql/exercise"
+    ;;
+  4)
+    echo "kadai を選択しました。"
+    select_file_from_dir "./docker/init-sql/kadai"
     ;;
   *)
     echo "無効な選択肢です。スクリプトを終了します。"
