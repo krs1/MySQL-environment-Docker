@@ -18,7 +18,7 @@ SELECT 社員番号, S.名前 AS 名前,
     ON S.勤務地ID = K.支店ID;
 -- 4
 SELECT 支店ID AS 支店コード, K.名前 AS 支店名,
-       S.名前 AS 支店長名, T. 社員数
+       S.名前 AS 支店長名, T.社員数
   FROM 支店 AS K
   JOIN 社員 AS S
     ON K.支店長ID = S.社員番号

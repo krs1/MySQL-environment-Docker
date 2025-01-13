@@ -499,8 +499,7 @@ CREATE TABLE IF NOT EXISTS 取引 (
     日付 DATE NOT NULL,
     口座番号 CHAR(7) NOT NULL,
     入金額 INTEGER,
-    出金額 INTEGER,
-    FOREIGN KEY (取引事由ID) REFERENCES 取引事由(取引事由ID)
+    出金額 INTEGER
 );
 -- テーブル: 商品
 CREATE TABLE IF NOT EXISTS 商品 (
@@ -629,9 +628,8 @@ INSERT INTO 取引事由 (取引事由ID, 取引事由名) VALUES
 (9, 'その他');
 
 -- INSERT INTO 取引
--- 取引番号の取引事由IDは19になっているが、外部キーの縛りがあるので9にする
 INSERT INTO 取引 (取引番号, 取引事由ID, 日付, 口座番号, 入金額, 出金額) VALUES
-(1, 9, '2022-01-05', '0051432', NULL, 41310),
+(1, 19, '2022-01-05', '0051432', NULL, 41310),
 (2, 1, '2022-03-01', '1017119', 65000, NULL),
 (3, 2, '2022-03-01', '1046990', NULL, 19000),
 (4, 5, '2022-03-01', '0945671', NULL, NULL),
