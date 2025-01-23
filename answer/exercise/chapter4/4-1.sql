@@ -7,7 +7,7 @@ SELECT DISTINCT 商品名 FROM 注文履歴
 -- 3
 SELECT 注文番号, 注文枝番, 注文金額 FROM 注文履歴
  WHERE 分類 = '1' ORDER BY 注文金額
-OFFSET 1 ROW FETCH NEXT 3 ROWS ONLY;
+LIMIT 1, 3
 -- 4
 SELECT 日付, 商品名, 単価, 数量, 注文金額 FROM 注文履歴
  WHERE 分類 = '3' AND 数量 >= 2 ORDER BY 日付, 数量 DESC;
